@@ -3,6 +3,24 @@ body {
     margin: 0;
     padding: 0;
 }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
+}
+.navlinks{
+    display: flex;
+    column-gap: 10px;
+}
+.navlinks a{
+text-decoration: none;
+color: #fff;
+}
+.navlinks a:hover{
+text-decoration: underline;
+color: #fff;
+}
 header {
     background-color:linen;
     color:darkslategrey;
@@ -12,12 +30,12 @@ header {
 h1 {
     margin: 0;
 }
-nav {
+.navbarbody {
     background-color: #444;
     padding: 10px 0;
     text-align: center;
 }
-nav a {
+.navbarbody a {
     color: #fff;
     text-decoration: none;
     padding: 0 10px;
