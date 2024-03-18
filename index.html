@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ZooPark</title>
+    <link href="G:\project personal\css\style.css" rel="stylesheet">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <h1>ZooPark </h1>
+
+        <div id="navlinks">
+            <p class="navbar-link"><a href="#">Tickets</a></p>
+            <p class="navbar-link"><a href="#">Food</a></p>
+            <p class="navbar-link"><a href="#">Donate</a></p>
+            <p class="navbar-link"><a href="#">SignIn</a></p>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Welcome to My Zoo</h1>
+        <h2>Jungle safari</h2>
+        <p>Join us for a wild expedition through the heart of nature, right in the heart of the city!</p>
+    </header>
+    <nav class="navbarbody">
+        <a href="#" id="showAll">Animals in the jungle </a>
+        <a href="#" id="showLions"><img src="G:\project personal\Assets\lion.jpeg" /></a>
+        <a href="#" id="showTigers"><img src="G:\project personal\Assets\tiger.jpeg" /></a>
+        <a href="#" id="showBears"><img src="G:\project personal\Assets\bear.jpeg" /></a>
+        <a href="#" id="showTerrestrial"><img src="G:\project personal\Assets\landanimals.jpeg" /></a>
+        <a href="#" id="showAquatic"><img src="G:\project personal\Assets\wateranimals.jpeg" /></a>
+    </nav>
+    <div class="container">
+        <div class="animal" data-type="All" style="display: none;">
+            <h2>Get into the world of Animals</h2>
+            <ol>
+                <li>Terrestrial</li>
+                <li>Aquatic</li>
+            </ol>
+        </div>
+        <div class="animal" data-type="lion" style="display: none;">
+            <h2>Lion</h2>
+            <p>Lions are large carnivorous mammals. They are part of the Felidae family, commonly known as cats. Lions are known for their majestic appearance and distinctive manes.</p>
+        </div>
+        <div class="animal" data-type="tiger" style="display: none;">
+            <h2>Tiger</h2>
+            <p>Tigers are the largest species of the cat family. They are known for their distinctive orange coat with black stripes. Tigers are solitary animals and are highly territorial.</p>
+        </div>
+        <div class="animal" data-type="bear" style="display: none;">
+            <h2>Bear</h2>
+            <p>Bears are large mammals belonging to the family Ursidae. They are typically characterized by a large body, stocky build, and shaggy hair. Bears are omnivores, feeding on both plants and animals.</p>
+        </div>
+        <div class="animal" data-type="Terrestrial" style="display: none;">
+            <h2>Terrestrial Animals</h2>
+            <p>Terrestrial animals are animals that live predominantly or entirely on land (e.g. cats, chickens, ants, spiders), as compared with aquatic animals, which live predominantly or entirely in the water (e.g. fish, lobsters, octopuses), and amphibians, which rely on aquatic and terrestrial habitats (e.g. frogs and newts). </p>
+        </div>
+        <div class="animal" data-type="Sea" style="display: none;">
+            <h2>Aquatic Animals</h2>
+            <p>An aquatic animal is any animal, whether vertebrate or invertebrate, that lives in water for all or most of its lifetime. Many insects such as mosquitoes, mayflies, dragonflies and caddisflies have aquatic larvae, with winged adults. </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('showAll').addEventListener('click', function() {
+            showAnimals('All');
+        });
+
+        document.getElementById('showLions').addEventListener('click', function() {
+            showAnimals('lion');
+        });
+
+        document.getElementById('showTigers').addEventListener('click', function() {
+            showAnimals('tiger');
+        });
+
+        document.getElementById('showBears').addEventListener('click', function() {
+            showAnimals('bear');
+        });
+
+        document.getElementById('showTerrestrial').addEventListener('click', function() {
+            showAnimals('Terrestrial');
+        });
+
+        document.getElementById('showAquatic').addEventListener('click', function() {
+            showAnimals('Sea');
+        });
+
+        function showAnimals(type) {
+            const animals = document.querySelectorAll('.animal');
+            animals.forEach(function(animal) {
+                if (animal.getAttribute('data-type') === type || type === 'All') {
+                    animal.style.display = 'block';
+                } else {
+                    animal.style.display = 'none';
+                }
+            });
+        } 
+    </script>
+</body>
+</html>
